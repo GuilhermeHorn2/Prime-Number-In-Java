@@ -1,0 +1,43 @@
+package project1;
+
+import java.util.Scanner;
+
+public class strt {
+
+	public static void main(String[] args) {
+		 //prime numbers in a range --> ex:5 -->1,2,3,5
+		System.out.println("Input an integer:");
+		Scanner sc = new Scanner(System.in);
+		String scnd = sc.next();
+        int n = Integer.parseInt(scnd);
+        String primos = "";
+        for(int i = 1;i <= n;i++) {
+        	if(eh_primo(i) == 1) {
+        		primos += i + ",";
+        	}
+        }
+        System.out.println(primos);
+		
+		
+		
+		
+		
+		
+	}
+	public static int eh_primo(int x) {
+		//A prime number is only divisible by 1 and itself
+		int c  = 0;
+		for(int i = 1;i <= x;i++) {
+			if(x % i == 0) {
+				//x is divisible by i
+				c++;
+			}
+		}
+		if(c > 2) {
+			return 0;
+		}
+		return 1;
+	}
+}
+
+
